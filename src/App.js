@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import Home from "./Components/Home/Home";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import CustomQuiz from "./Components/Quiz/CustomQuiz";
+import { useState } from "react";
+import Quiz from "./Components/Quiz/Quiz";
 
 function App() {
+
+  const [category, setCategory] = useState('')
+  const [difficulty, setDifficulty] = useState('')
+  const [question, setQuestion] = useState('5')
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route exact path="/select-quiz" element={<CustomQuiz setCategory={setCategory} setDifficulty={setDifficulty} setQuestion={setQuestion} />} />
+          <Route exact path="/start-quiz/" element={<Quiz category={category} difficulty={difficulty} question={question} />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

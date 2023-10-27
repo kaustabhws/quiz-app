@@ -1,0 +1,120 @@
+canvas {
+    background: #023;
+    display: block;
+}
+
+.heading {
+    position: relative;
+    text-align: center;
+    color: white;
+    font-size: 40px;
+}
+
+.headerContainer {
+    min-height: 70vh;
+    position: relative;
+    color: white;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.mainContainer {
+    max-width: 580px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.text-change {
+    color: #3cd458;
+}
+
+.imgContainer img {
+    height: 280px;
+    transition: all 0.4s ease;
+}
+
+@media (max-width: 1130px) {
+    .headerContainer {
+        padding: 0px 15px;
+    }
+
+    .imgContainer img {
+        height: 200px;
+    }
+}
+
+@media (max-width: 825px) {
+    .headerContainer {
+        flex-direction: column;
+    }
+
+    .mainContainer {
+        max-width: 100%;
+        text-align: center;
+        gap: 0px;
+    }
+}
+
+@media (max-width: 365px) {
+    .imgContainer {
+        max-width: calc(95%);
+    }
+
+    .imgContainer img {
+        height: auto;
+        max-width: 100%;
+    }
+}
+
+.header-btn .head-btn {
+    padding: 10px 25px;
+    margin: 0.5em;
+    background: rgb(183, 0, 183);
+    color: white;
+    border: none;
+    border-radius: 0.625em;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.header-btn .head-btn::after {
+    content: "";
+    background: white;
+    position: absolute;
+    z-index: -1;
+    left: -20%;
+    right: -20%;
+    top: 0;
+    bottom: 0;
+    transform: skewX(-45deg) scale(0, 1);
+    transition: all 0.5s;
+}
+
+.header-btn .head-btn:hover {
+    color: black;
+}
+
+.header-btn .head-btn:hover::after {
+    transform: skewX(-45deg) scale(1, 1);
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+@media (max-width: 300px) {
+    .header-btn .head-btn {
+        padding: 6px 15px !important;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 278px) {
+    .heading {
+        font-size: 30px;
+    }
+}

@@ -1,0 +1,262 @@
+.customQuizContainer {
+    background: #24292e;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    padding-bottom: 50px
+}
+
+.customQuizHeading {
+    text-align: center;
+}
+
+.selectionContainer {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.selCont {
+    display: flex;
+    gap: 25px;
+}
+
+.category,
+.difficulty,
+.question {
+    display: flex;
+    flex-direction: column;
+    min-width: 250px;
+    gap: 5px;
+}
+
+.selectionContainer select {
+    border: 0;
+    outline: 0;
+    padding: 5px;
+    border-radius: 10px;
+    min-height: 40px;
+}
+
+.submitBtn button {
+    background: #5cbdfd;
+    font-family: inherit;
+    padding: 0.6em 1.3em;
+    font-weight: 900;
+    font-size: 18px;
+    border: 3px solid black;
+    border-radius: 0.4em;
+    box-shadow: 0.1em 0.1em;
+}
+
+.submitBtn button:hover {
+    transform: translate(-0.05em, -0.05em);
+    box-shadow: 0.15em 0.15em;
+}
+
+.submitBtn button:active {
+    transform: translate(0.05em, 0.05em);
+    box-shadow: 0.05em 0.05em;
+}
+
+@media (max-width: 885px) {
+    .selCont {
+        flex-direction: column;
+    }
+}
+
+.mainQuizContainer {
+    background: #24292e;
+    color: white;
+    min-height: 100vh;
+    padding: 20px
+}
+
+.quizTitle h2 {
+    text-transform: capitalize;
+}
+
+.quizQuesContainer {
+    background: #223440;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.questionTitle {
+    margin-bottom: 20px;
+}
+
+.optionContainer {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.optionContainer ul {
+    padding-left: 0px;
+}
+
+.optionContainer label {
+    margin-bottom: 20px;
+    flex-basis: 50%;
+    box-sizing: border-box;
+}
+
+.material-checkbox {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    color: white;
+    cursor: pointer;
+    overflow-wrap: break-word;
+}
+
+.material-checkbox input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.checkmark {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 15px;
+    border: 2px solid #454B00;
+    border-radius: 4px;
+    transition: all 0.3s;
+}
+
+.vall {
+    overflow-wrap: break-word;
+    max-width: calc(100% / 1.4);
+}
+
+.material-checkbox input[type="checkbox"]:checked~.checkmark {
+    background-color: #2F3300;
+    border-color: #454B00;
+}
+
+.material-checkbox input[type="checkbox"]:checked~.checkmark:after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 6px;
+    width: 4px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.material-checkbox input[type="checkbox"]:focus~.checkmark {
+    box-shadow: 0 0 0 2px #dfec5065;
+}
+
+.material-checkbox:hover input[type="checkbox"]~.checkmark {
+    border-color: #C3CF34;
+}
+
+.material-checkbox input[type="checkbox"]:disabled~.checkmark {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.material-checkbox input[type="checkbox"]:disabled~.checkmark:hover {
+    border-color: #4d4d4d;
+}
+
+.btn-class-name {
+    --color: 180, 255, 100;
+    border-radius: .5em;
+    transition: .3s;
+    background-color: rgba(var(--color), .2);
+    color: rgb(var(--color));
+    fill: rgb(var(--color));
+    font-family: monospace;
+    font-weight: bolder;
+    font-size: x-large;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    border: 2px solid rgb(var(--color));
+    box-shadow: 0 0 10px rgba(var(--color), .4);
+    outline: none;
+    display: flex;
+    align-items: center;
+    padding: .5em 1em;
+}
+
+.btn-class-name:hover {
+    box-shadow: 0 0 0 5px rgba(var(--color), .5);
+}
+
+.btn-class-name span {
+    transform: scale(.8);
+    transition: .3s;
+}
+
+.btn-class-name:hover span {
+    transform: scale(1);
+}
+
+.btn-class-name svg {
+    font-size: 0;
+    transform: scale(0.5) translateX(0%) rotate(-180deg);
+    transition: .3s;
+}
+
+.btn-class-name:hover svg {
+    font-size: 20px;
+    transform: scale(1) translateX(20%) rotate(0deg);
+}
+
+.btn-class-name:active {
+    transition: 0s;
+    box-shadow: 0 0 0 5px rgb(var(--color));
+}
+
+.btnCont {
+    display: flex;
+    justify-content: center;
+}
+
+.questionCont {
+    display: flex;
+    justify-content: center;
+}
+
+.questionsCont {
+    min-width: calc(80%);
+}
+
+@media (max-width: 1100px) {
+    .optionContainer {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .optionContainer label {
+        margin-bottom: 0px;
+    }
+}
+
+.scoreCont {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 100px;
+}
+
+.scoreCont h3 {
+    font-size: 25px;
+}
+
+.sp h2 {
+    margin-top: 30px;
+}
